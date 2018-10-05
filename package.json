@@ -6,7 +6,7 @@
   "author": "James Cassidy <cassidyjamesw@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

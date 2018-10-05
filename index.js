@@ -1,6 +1,9 @@
 // imports
 const express = require("express");
 const logger = require("morgan");
+const configureMiddleware = require("./config/middleware.js");
+const projectRoutes = require("./projects/projectRoutes");
+const actionRoutes = require("./actions/actionRoutes");
 
 // setup server
 const server = express();
@@ -13,6 +16,9 @@ configureMiddleware(server);
 server.get("/", (req, res) => {
   res.send("Hello World");
 });
+
+server.use("/projects", projectRoutes);
+server.use("/actions", actionRoutes);
 
 // call server.listen
 server.listen(port, () => {
